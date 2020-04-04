@@ -45,7 +45,7 @@ print("Cleaning all nba teams...")
 df = pd.read_csv("data/all_nba_teams.csv")
 
 # 177 because after that row the players dont have positions and dont need to be cleane
-for i in range(0, 177):
+for i in range(0, len(df)):
     df.iloc[i][3] = df.iloc[i][3][:-2]
     df.iloc[i][4] = df.iloc[i][4][:-2]
     df.iloc[i][5] = df.iloc[i][5][:-2]
@@ -53,7 +53,6 @@ for i in range(0, 177):
     df.iloc[i][7] = df.iloc[i][7][:-2]
 
 df.to_csv('data/all_nba_teams.csv', index=False)
-
 
 print("Done")
 
